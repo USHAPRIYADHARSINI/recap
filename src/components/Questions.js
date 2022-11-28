@@ -4,6 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import Question from './Question';
+import * as dotenv from 'dotenv';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -54,7 +55,7 @@ function Questions() {
   const [doubt, setDoubt] = useState("")
 
   useEffect(()=>{
-    fetch("https://632161fcfd698dfa29f6a334.mockapi.io/questions")
+    fetch(`${API}/questions`)
     // .then(console.log("fetched"))
     // .then((data)=> data.json)
     // .then((data)=> console.log(data, "data fetched successfully"))
