@@ -27,7 +27,7 @@ function Question({question}) {
 <p className='company-tags'>{answers}</p>
 <p className='question-name'>{question.name}</p>
 <form onSubmit={()=>handleSubmit}>
-    <textarea label="Post if you have a solution" onChange={(e)=>setDoubt(e. target.value)}/>
+    <textarea label="Post if you have a solution" onChange={(e)=>setAnswers(e. target.value)}/>
     <button type='submit' >Post</button>
     </form>
 

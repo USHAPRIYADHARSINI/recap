@@ -4,7 +4,7 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import Question from './Question';
-import * as dotenv from 'dotenv';
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,6 +53,7 @@ function Questions() {
   const [questions, setQuestions] = useState([]);
   const [search, setSearch] = useState("");
   const [doubt, setDoubt] = useState("")
+  const API = process.env.API
 
   useEffect(()=>{
     fetch(`${API}/questions`)
@@ -79,11 +80,11 @@ function Questions() {
   // console.log((data)=> data.name)
   console.log(searchFilter)
 
-  const handleSubmit= (doubt)=>{
-      const result = [...questions, doubt]
-      setQuestions(result);
-  }
+}
 
+const handleSubmit= (doubt)=>{
+  const result = [...questions, doubt]
+  setQuestions(result);
 }
 
   return <div>
@@ -100,7 +101,7 @@ function Questions() {
         </Search>
         <p>{search}</p>
   <div className='companies-list-container'>
-    <form onSubmit={()=>handleSubmit}>
+    <form onSubmit={(value)=>handleSubmit(value)}>
     <textarea label="Post your doubt here" onChange={(e)=>setDoubt(e. target.value)}/>
     <button type='submit' >Post</button>
     </form>
