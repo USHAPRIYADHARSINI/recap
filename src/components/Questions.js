@@ -82,10 +82,10 @@ function Questions() {
 
 }
 
-const handleSubmit= (doubt)=>{
-  const result = [...questions, doubt]
-  setQuestions(result);
-}
+// const handleSubmit= (doubt)=>{
+//   const result = [...questions, doubt]
+//   setQuestions(result);
+// }
 
   return <div>
   <h1>Questions</h1>
@@ -101,10 +101,10 @@ const handleSubmit= (doubt)=>{
         </Search>
         <p>{search}</p>
   <div className='companies-list-container'>
-    <form onSubmit={(value)=>handleSubmit(value)}>
+    {/* <form onSubmit={(value)=>handleSubmit(value)}>
     <textarea label="Post your doubt here" onChange={(e)=>setDoubt(e. target.value)}/>
     <button type='submit' >Post</button>
-    </form>
+    </form> */}
   {/* console.log({usersList}) */}
   {questions.map((question, index)=> (
     <Question key = {index} question ={question} id ={index}/>) )}
