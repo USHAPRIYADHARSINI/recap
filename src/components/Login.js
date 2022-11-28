@@ -6,12 +6,10 @@ import { useFormik } from "formik";
 import {Navigate, useParams} from 'react-router-dom';
 import MyProfile from './MyProfile';
 import { useNavigate } from 'react-router-dom';
-import * as dotenv from 'dotenv';
 
 function Login() {
     let { id } = useParams();
     const navigate = useNavigate();
-    const API = process.env.API
 
     const formik = useFormik({
         initialValues:{
@@ -20,7 +18,7 @@ function Login() {
         },
         onSubmit : (values) =>{
 
-          let result = fetch(`${API}/users/login`,{
+          let result = fetch(`https://632161fcfd698dfa29f6a334.mockapi.io/users/login`,{
             method:'POST',
             headers:{
               "Content-Type":"application/json",

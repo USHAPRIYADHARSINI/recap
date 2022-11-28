@@ -53,10 +53,10 @@ function Questions() {
   const [questions, setQuestions] = useState([]);
   const [search, setSearch] = useState("");
   const [doubt, setDoubt] = useState("")
-  const API = process.env.API
+ 
 
   useEffect(()=>{
-    fetch(`${API}/questions`)
+    fetch(`https://632161fcfd698dfa29f6a334.mockapi.io/questions`)
     // .then(console.log("fetched"))
     // .then((data)=> data.json)
     // .then((data)=> console.log(data, "data fetched successfully"))

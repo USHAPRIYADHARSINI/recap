@@ -11,14 +11,14 @@ import ListDividers from './components/ListDividers';
 import Companies from './components/Companies';
 import MyProfile from './components/MyProfile';
 import Questions from './components/Questions';
-import * as dotenv from 'dotenv';
+
 
 function App() {
     const [users, setUsers] = useState([]);
-    const API = process.env.API
+    
 
     useEffect(()=>{
-        fetch(`${API}/users`)
+        fetch(`https://632161fcfd698dfa29f6a334.mockapi.io/users`)
         // .then(console.log("fetched"))
         // .then((data)=> data.json)
         // .then((data)=> console.log(data, "data fetched successfully"))
